@@ -1,0 +1,19 @@
+{% extends "appproyecto/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-6">EMPRESAS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+    <p>Empresa VP: <input type="text" name="Empresa VP"></p>
+    
+    <input type="submit" value="Guardar empresa"
+
+</form>
+
+{% endblock %}

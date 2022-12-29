@@ -1,0 +1,21 @@
+{% extends "appproyecto/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-6">FORMULARIO DE SEXTUPLES</h1>
+{% endblock %}
+
+{% block contenido %}
+
+<form action="{% url 'sextuplesFormulario' %}" method="POST"> {% csrf_token %}
+
+    <p>Direcccion: <input type="text" name="direccion"></p>
+    <p>Empresa VP: <input type="text" name="Empresa VP"></p>
+    <p>Cantidad: <input type="number" name="cantidad"></p>
+    
+    <input type="submit" value="Guardar sextuple"
+
+</form>
+
+{% endblock %}
