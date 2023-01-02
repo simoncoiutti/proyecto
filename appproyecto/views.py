@@ -56,13 +56,13 @@ def sextuplesFormulario(request):
             
             sextuples= Sextuples(direccion=direccion,empresa_vp=empresa_vp, cantidad=cantidad)
             sextuples.save()
-            return render(request, "Appproyecto/inicio.html" ,{"mensaje": "Sextuple guardado correctamente"})
+            return render(request, "appproyecto/inicio.html" ,{"mensaje": "Sextuple guardado correctamente"})
         else:
-            return render(request, "Appproyecto/sextuplesFormulario.html" ,{"form": form, "mensaje": "Informacion no valida"})
+            return render(request, "appproyecto/sextuplesFormulario.html" ,{"form": form, "mensaje": "Informacion no valida"})
         
     else:
         formulario= sextuplesform()
-        return render (request, "Appproyecto/sextuplesFormulario.html", {"form": formulario})
+        return render (request, "appproyecto/sextuplesFormulario.html", {"form": formulario})
 
 
 
