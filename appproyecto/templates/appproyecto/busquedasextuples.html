@@ -1,0 +1,23 @@
+{% extends "appproyecto/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">BUSQUEDA DE SEXTUPLES</h1>
+{% endblock %}
+
+{% block contenido %}
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'buscar' %}" method="GET">
+
+
+    <input type="direccion" name="direccion" id="direccion" placeholder="INSERTE DIRECCION"> 
+    
+    
+    <input type="submit" value="buscar direccion"
+
+</form>
+
+{% endblock %}

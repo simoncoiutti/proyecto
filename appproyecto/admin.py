@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Familiar,Sextuples,Empresa
+from .models import familiar,sextuples,empresa_vp
+
 # Register your models here.
-admin.site.register(Familiar)
-admin.site.register(Sextuples)
-admin.site.register(Empresa)
+admin.site.register(familiar)
+admin.site.register(sextuples)
+admin.site.register(empresa_vp)

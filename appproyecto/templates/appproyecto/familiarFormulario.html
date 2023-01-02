@@ -1,0 +1,23 @@
+{% extends "appproyecto/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">FAMILIAR FORMULARIO</h1>
+{% endblock %}
+
+{% block contenido %}
+
+<form action="% url 'familiarFormulario' %}" method="POST"> {% csrf_token %}
+
+    <table>
+        {{ form.as_table }}
+    </table>
+    
+    <input type="submit" value="Guardar familiar"
+
+</form>
+{% block subtitulo %}
+<h2>{{ mensaje }}</h2>
+{% endblock %}
+{% endblock %}
