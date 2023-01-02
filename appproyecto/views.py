@@ -54,9 +54,9 @@ def sextuplesFormulario(request):
             empresa_vp= informacion["empresa_vp"]
             cantidad= informacion["cantidad"]
             
-            sextuples= sextuples(direccion=direccion,empresa=empresa_vp, cantidad=cantidad)
+            sextuples= Sextuples(direccion=direccion,empresa_vp=empresa_vp, cantidad=cantidad)
             sextuples.save()
-            return render(request, "Appproyecto/inicio.html" ,{"mensaje": "Curso guardado correctamente"})
+            return render(request, "Appproyecto/inicio.html" ,{"mensaje": "Sextuple guardado correctamente"})
         else:
             return render(request, "Appproyecto/sextuplesFormulario.html" ,{"form": form, "mensaje": "Informacion no valida"})
         
@@ -71,7 +71,7 @@ def empresaFormulario(request):
         form= empresaform(request.POST)
         if form.is_valid():
             informacion=form.cleaned_data
-            empresa_vp=informacion["Empresa"]
+            empresa_vp=informacion["empresa_vp"]
         
             empresa_vp= empresa_vp(empresa=empresa_vp)
             empresa_vp.save
@@ -109,5 +109,10 @@ def busquedasextuples(request):
 
 
 def buscar(request):
-    if "direccion" in request.GET:
-        return HttpResponse(F"ESTOY BUSCANDO LA DIRECCION {request.GET['direccion']}")
+    direccion= request.GET["direccion"]
+    if direccion!="":
+
+        sextuples= Sextuples.objects.filter(direccion__icontains=direccion)#buscar otros filtros en la documentacion de django
+        return render(request, "appproyecto/resultadosBusqueda.html", {"sextuples": sextuples})
+    else:
+        return render(request, "appproyecto/busquedasextuples.html", {"mensaje": "Che Ingresa un sextuple para buscar!"})

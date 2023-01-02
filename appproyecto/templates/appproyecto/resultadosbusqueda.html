@@ -1,0 +1,20 @@
+{% extends "appproyecto/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Resutados busqueda</h1>
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Listado sextuples</h2>
+
+{% for sextuples in sextuples %}
+
+<h3>{{sextuples.direccion}} - {{sextuples.empresa_vp}}</h3>
+
+{% endfor %}
+
+
+{% endblock %}
